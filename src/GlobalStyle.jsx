@@ -14,7 +14,7 @@ const Globalstyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: 0;
-        font-size:10px;
+        font-size:16px;
         vertical-align: baseline;
     }
     body{
@@ -23,6 +23,7 @@ const Globalstyle = createGlobalStyle`
         height: 100vh;
         font-family: 'Noto Sans KR', sans-serif;
         text-align: center;
+        color:white;
         background-color: #8EC5FC;
 background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 ;
@@ -30,6 +31,10 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     }
     ol, ul{
         list-style: none;
+    }
+    input,textarea{
+        border: none;
+        outline: none;
     }
     button {
         border: none;

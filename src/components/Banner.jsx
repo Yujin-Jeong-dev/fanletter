@@ -12,9 +12,9 @@ const Background = styled.div`
 
 const Text = styled.h1`
     position: absolute;
-    font-size:3rem;
-    color:white;
-    top:85%;
+    font-size:2rem;
+    color:#edf2fb;
+    top:10%;
     left:50%;
 `;
 
