@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 
 const Div = styled.div`
@@ -36,9 +37,11 @@ const P = styled.p`
 `;
 
 export default function Letter({ letter }) {
-    const { avatar, content, createdAt, nickname } = letter;
+    //특정 멤버를 클릭하면 해당 멤버로 필터 
+    const { avatar, content, createdAt, nickname, id } = letter;
+    const navigate = useNavigate();
     return (
-        <Li>
+        <Li onClick={() => navigate(`letterDetail/${id}`, { state: letter })}>
             <Div>
                 <Img src={avatar} alt='avatar' />
                 <P>{content}</P>

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 
 const StyleButton = styled.button`
-    width:5rem;
+    width:6rem;
     height:2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color:white;
-    padding:0.5rem;
+    padding:0.3rem;
     background-color: #83bcff;
     
      &:hover{
