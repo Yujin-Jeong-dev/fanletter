@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'ui/Button';
 import styled from 'styled-components';
 
+
 const Form = styled.form`
     width:500px;
     height: 40%;
@@ -41,7 +42,7 @@ const Select = styled.select`
     margin-left:0.5rem;
 `
 
-export default function LetterForm({ members }) {
+export default function LetterForm({ filters }) {
     const [form, setForm] = useState(initialState);
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -57,25 +58,28 @@ export default function LetterForm({ members }) {
 
     }
     return (
-        <Form onSubmit={handleSubmit}>
-            <Section>
-                <label htmlFor="nickname">Nickname:</label>
-                <Input type='text' id="nickname" name='nickname' value={form.nickname} onChange={handleChange} maxLength={20} placeholder='최대 20자까지 가능합니다.' />
-            </Section>
-            <Section>
-                <label htmlFor="content">Content:</label>
-                <Textarea id='content' name='content' value={form.content} onChange={handleChange} placeholder='최대 100자까지만 작성 가능합니다.' maxLength={100} />
-            </Section>
-            <Section>
-                <label htmlFor='who'>To:</label>
-                <Select id='who'>
-                    {members.map(member => (
-                        <option>{member}</option>
-                    ))}
-                </Select>
-            </Section>
-            <Button text="Register" />
-        </Form>
+        <>
+            <h3>팬레터 작성하기✏️</h3>
+            <Form onSubmit={handleSubmit}>
+                <Section>
+                    <label htmlFor="nickname">Nickname:</label>
+                    <Input type='text' id="nickname" name='nickname' value={form.nickname} onChange={handleChange} maxLength={20} placeholder='최대 20자까지 가능합니다.' />
+                </Section>
+                <Section>
+                    <label htmlFor="content">Content:</label>
+                    <Textarea id='content' name='content' value={form.content} onChange={handleChange} placeholder='최대 100자까지만 작성 가능합니다.' maxLength={100} />
+                </Section>
+                <Section>
+                    <label htmlFor='who'>TO:</label>
+                    <Select id='who'>
+                        {filters.map((member, idx) => (
+                            <option key={idx}>{member}</option>
+                        ))}
+                    </Select>
+                </Section>
+                <Button text="Register" />
+            </Form>
+        </>
     );
 }
 

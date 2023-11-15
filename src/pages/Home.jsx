@@ -3,6 +3,8 @@ import LetterForm from 'components/LetterForm';
 import Members from 'components/Members';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import LetterList from 'components/LetterList';
+
 
 const FlexBox = styled.ul`
     display:flex;
@@ -12,20 +14,20 @@ const FlexBox = styled.ul`
 `;
 
 
+
+
+const filters = ['all', '민지', '하니', '다니엘', '해린', '혜인'];
+
 export default function Home() {
-    const members = ['민지', '하니', '다니엘', '해린', '혜인'];
-    const [active, setActive] = useState(members[0]);
-    const handleClick = (e) => {
-        setActive(e.target.innerHTML);
-        console.log(e.target.$active);
-    }
+    const [filter, setFilter] = useState(filters[0]);
+
     return (
         <>
-            <FlexBox onClick={handleClick}>
-                {members &&
-                    members.map((member, idx) => (<Members key={idx} member={member} active={active} />))}
+            <LetterForm filters={filters} />
+            <FlexBox>
+                {filters.map((member, idx) => (<Members key={idx} member={member} filter={filter} onFilterChange={filter => setFilter(filter)} />))}
             </FlexBox>
-            <LetterForm members={members} />
+            <LetterList filter={filter} />
         </>
     );
 }

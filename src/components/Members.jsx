@@ -8,18 +8,18 @@ const StyleLi = styled.li`
     color:white;
     padding:0.6rem 0.3rem;
     border-radius:3rem;
+    cursor:pointer;
 
     &:hover{
         transform:scale(1.1);
      }
 
-    background-color: ${props => props.$active === props.children ? '#8093f1' : '#83bcff'};
+    background-color: ${props => props.$filter === props.children ? '#8093f1' : '#83bcff'};
 `;
 
-export default function Members({ member, active }) {
-
+export default function Members({ member, filter, onFilterChange }) {
     return (
-        <StyleLi $active={active}>
+        <StyleLi $filter={filter} onClick={() => onFilterChange(member)}>
             {member}
         </StyleLi>
     );
