@@ -48,7 +48,7 @@ export default function Letter({ letter }) {
             </Div>
             <Div2>
                 <p>{nickname}</p>
-                <time>{createdAt}</time>
+                <time>{new Date(createdAt).toLocaleString()}</time>
             </Div2>
 
         </Li>

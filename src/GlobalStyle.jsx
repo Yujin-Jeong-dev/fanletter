@@ -25,10 +25,10 @@ const Globalstyle = createGlobalStyle`
         text-align: center;
         color:white;
         background-color: #8EC5FC;
-background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-;
+        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
         margin-bottom: 100px;
     }
+
     ol, ul{
         list-style: none;
     }

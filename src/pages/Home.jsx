@@ -23,11 +23,10 @@ export default function Home() {
 
     return (
         <>
-            <LetterForm filters={filters} />
             <FlexBox>
                 {filters.map((member, idx) => (<Members key={idx} member={member} filter={filter} onFilterChange={filter => setFilter(filter)} />))}
             </FlexBox>
-            <LetterList filter={filter} />
+            <LetterList filters={filters} filter={filter} />
         </>
     );
 }
