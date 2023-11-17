@@ -3,21 +3,13 @@ import image from '../asset/newjeans.jpg'
 import styled from 'styled-components';
 
 const Background = styled.div`
-    position: relative;
     width:100%;
-    height:38%;
-    background-image:url(${image});
-    background-size: contain;
+    height:35%;
+    background:url(${image}) no-repeat center;
+    background-size: cover;
     margin-bottom: 0.5rem;
 `;
 
-const Text = styled.h1`
-    position: absolute;
-    font-size:2rem;
-    color:#edf2fb;
-    top:10%;
-    left:50%;
-`;
 
 
 
@@ -25,11 +17,7 @@ const Text = styled.h1`
 export default function Banner() {
     return (
         <>
-            <Background>
-                <Text>
-                    NewJeans
-                </Text>
-            </Background>
+            <Background />
         </>
     );
 }

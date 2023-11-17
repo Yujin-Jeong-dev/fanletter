@@ -32,7 +32,7 @@ const StyleLetter = styled.ul`
 `;
 
 function filterLetters(letters, filter) {
-    if (filter === 'all') return letters;
+    if (filter === 'All') return letters;
     return letters.filter(letter => letter.writedTo === filter);
 }
 

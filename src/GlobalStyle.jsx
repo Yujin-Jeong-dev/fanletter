@@ -24,8 +24,7 @@ const Globalstyle = createGlobalStyle`
         font-family: 'Noto Sans KR', sans-serif;
         text-align: center;
         color:white;
-        background-color: #8EC5FC;
-        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        background: linear-gradient(to right, #9796f0, #fbc7d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         margin-bottom: 100px;
     }
 

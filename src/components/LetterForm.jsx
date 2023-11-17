@@ -3,12 +3,12 @@ import Button from 'ui/Button';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import userImg from '../asset/user.png'
-import { FaPencil } from 'react-icons/fa6';
+import { GiLoveLetter } from 'react-icons/gi';
 
 
 export default function LetterForm({ filters, onAdd }) {
     const [form, setForm] = useState(initialState);
-    const sendTo = filters.filter(filter => filter !== 'all');
+    const sendTo = filters.filter(filter => filter !== 'All');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -33,7 +33,7 @@ export default function LetterForm({ filters, onAdd }) {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                <h3>팬레터 작성하기<FaPencil /></h3>
+                <h1><GiLoveLetter /></h1>
                 <Section>
                     <label htmlFor="nickname">Nickname:</label>
                     <Input type='text' id="nickname" name='nickname' value={form.nickname} onChange={handleChange} maxLength={20} placeholder='최대 20자까지 가능합니다.' />
@@ -65,8 +65,8 @@ const Form = styled.form`
     border-radius: 1.5rem;
     padding:1.5rem;
 
-    h3{
-        font-size:1.5rem;
+    h1{
+        font-size:2rem;
     }
 `;
 

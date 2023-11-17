@@ -7,7 +7,7 @@ import LetterList from 'components/LetterList';
 
 
 
-const filters = ['all', '민지', '하니', '다니엘', '해린', '혜인'];
+const filters = ['All', '민지', '하니', '다니엘', '해린', '혜인'];
 
 export default function Home({ letters, onAdd }) {
     const [filter, setFilter] = useState(filters[0]);

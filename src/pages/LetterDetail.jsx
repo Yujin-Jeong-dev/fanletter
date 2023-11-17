@@ -15,9 +15,7 @@ export default function LetterDetail({ onDelete, onUpdate }) {
     const [updateText, setUpdateText] = useState(content);
 
     const editLetter = (e) => {
-        //수정 중인지 알려주는 상태값
         setEditable(true);
-        //textarea에서 수정한 값으로 업데이트
         setText(e.target.value);
     }
 
