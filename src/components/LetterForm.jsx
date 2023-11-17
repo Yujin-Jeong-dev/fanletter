@@ -8,6 +8,8 @@ import { FaPencil } from 'react-icons/fa6';
 
 export default function LetterForm({ filters, onAdd }) {
     const [form, setForm] = useState(initialState);
+    const sendTo = filters.filter(filter => filter !== 'all');
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value })
@@ -43,7 +45,7 @@ export default function LetterForm({ filters, onAdd }) {
                 <Section>
                     <label htmlFor='who'>TO:</label>
                     <Select id='who' name='writedTo' onChange={handleChange} value={form.writedTo}>
-                        {filters.map((member, idx) => (
+                        {sendTo.map((member, idx) => (
                             <option key={idx}>{member}</option>
                         ))}
                     </Select>
@@ -54,7 +56,7 @@ export default function LetterForm({ filters, onAdd }) {
     );
 }
 
-const initialState = { nickname: '', content: '', writedTo: 'all' };
+const initialState = { nickname: '', content: '', writedTo: '' };
 const Form = styled.form`
     width:500px;
     height: 350px;

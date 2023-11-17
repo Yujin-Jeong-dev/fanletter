@@ -5,6 +5,72 @@ import Button from 'ui/Button';
 import { SlEnvolopeLetter } from 'react-icons/sl'
 
 
+
+export default function LetterDetail({ onDelete, onUpdate }) {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [editable, setEditable] = useState(false);
+    let { id, avatar, content, createdAt, nickname, writedTo } = location.state.letter;
+    const [text, setText] = useState('');
+    const [updateText, setUpdateText] = useState(content);
+
+    const editLetter = (e) => {
+        //수정 중인지 알려주는 상태값
+        setEditable(true);
+        //textarea에서 수정한 값으로 업데이트
+        setText(e.target.value);
+    }
+
+    const updateLetter = () => {
+        //text가 공백인 경우 : 기존에 있는 content 값을 다 지우거나 수정을 안한 경우 
+        if (text === updateText || text === '') {
+            alert('수정된 사항이 없거나 1자 이상 입력하지 않는 경우 수정되지 않아요!');
+            return;
+        }
+        if (window.confirm('수정하시겠습니까?')) {
+            setEditable(false);
+            setUpdateText(text);
+            //수정한 text가 담긴 편지 정보 데이터를 전달함
+            onUpdate({ id, avatar, content: text, createdAt, nickname, writedTo });
+            navigate('/');
+
+        }
+    }
+    const deleteLetter = () => {
+        if (window.confirm('정말로 삭제하시겠습니까?')) {
+            onDelete(id);
+            alert('해당 편지가 삭제되었습니다');
+            navigate('/');
+        }
+
+    }
+    return (
+        <>
+            <Button text="Home" onClick={() => navigate('/')} />
+            <Detail>
+                <header>
+                    <Avatar>
+                        <img src={avatar} alt='avatar' />
+                        <span>{nickname}</span>
+                    </Avatar>
+                    <time>{new Date(createdAt).toLocaleString()}</time>
+                </header>
+
+                <WriteTo><SlEnvolopeLetter /> TO. {writedTo}</WriteTo>
+                {editable ? (<Content as="textarea" defaultValue={updateText} onChange={editLetter} />) : (<Content>{updateText}</Content>)}
+
+                <Buttons>
+                    {/* 수정이 가능하게 되면 수정완료 버튼과 취소 버튼으로 변경.  */}
+                    {editable ? (<Button text="수정완료" onClick={updateLetter} />) : (<Button text="수정" onClick={editLetter} />)}
+                    {editable ? (<Button text="취소" onClick={() => setEditable(false)} />) : (<Button text="삭제" onClick={deleteLetter} />)}
+                </Buttons>
+            </Detail>
+        </>
+
+    );
+}
+
+
 const Detail = styled.div`
     width:800px;
     min-height: 400px;
@@ -57,8 +123,9 @@ const Content = styled.p`
     width:100%;
     height:200px;
     font-size:1.5rem;
+    text-align: start;
     background-color:pink;
-    padding:1rem;
+    padding:1rem 1.5rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius:1rem;
     margin-bottom: 1rem;
@@ -69,66 +136,5 @@ const Buttons = styled.div`
     display: flex;
     justify-content: flex-end;
     gap:1rem;
-`
-
-export default function LetterDetail({ onDelete, onUpdate }) {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [editable, setEditable] = useState(false);
-    let { id, avatar, content, createdAt, nickname, writedTo } = location.state.letter;
-    const [text, setText] = useState('');
-    const [updateText, setUpdateText] = useState(content);
-
-    const editLetter = (e) => {
-        //수정 중인지 알려주는 상태값
-        setEditable(true);
-        //textarea에서 수정한 값으로 업데이트
-        setText(e.target.value);
-    }
-
-    const updateLetter = () => {
-        //text가 공백인 경우 : 기존에 있는 content 값을 다 지우거나 수정을 안한 경우 
-        if (text === updateText || text === '') {
-            alert('수정된 사항이 없거나 1자 이상 입력하지 않는 경우 수정되지 않아요!');
-            return;
-        }
-        if (window.confirm('수정하시겠습니까?')) {
-            setEditable(false);
-            setUpdateText(text);
-            //수정한 text가 담긴 편지 정보 데이터를 전달함
-            onUpdate({ id, avatar, content: text, createdAt, nickname, writedTo });
-            navigate('/');
-
-        }
-    }
-    const deleteLetter = () => {
-        if (window.confirm('정말로 삭제하시겠습니까?')) {
-            onDelete(id);
-            alert('해당 편지가 삭제되었습니다');
-            navigate('/');
-        }
-
-    }
-    return (
-        <Detail>
-            <header>
-                <Avatar>
-                    <img src={avatar} alt='avatar' />
-                    <span>{nickname}</span>
-                </Avatar>
-                <time>{new Date(createdAt).toLocaleString()}</time>
-            </header>
-
-            <WriteTo><SlEnvolopeLetter /> TO. {writedTo}</WriteTo>
-            {editable ? (<Content as="textarea" defaultValue={updateText} onChange={editLetter} />) : (<Content>{updateText}</Content>)}
-
-            <Buttons>
-                {/* 수정이 가능하게 되면 수정완료 버튼과 취소 버튼으로 변경.  */}
-                {editable ? (<Button text="수정완료" onClick={updateLetter} />) : (<Button text="수정" onClick={editLetter} />)}
-                {editable ? (<Button text="취소" onClick={() => setEditable(false)} />) : (<Button text="삭제" onClick={deleteLetter} />)}
-            </Buttons>
-        </Detail>
-
-    );
-}
+`;
 

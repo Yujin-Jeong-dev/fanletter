@@ -8,6 +8,7 @@ const Background = styled.div`
     height:38%;
     background-image:url(${image});
     background-size: contain;
+    margin-bottom: 0.5rem;
 `;
 
 const Text = styled.h1`
