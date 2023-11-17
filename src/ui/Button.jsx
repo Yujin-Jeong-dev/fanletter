@@ -15,10 +15,10 @@ const StyleButton = styled.button`
      }
 `;
 
-export default function Button({ text }) {
+export default function Button({ text, onClick }) {
 
     return (
-        <StyleButton>{text}</StyleButton>
+        <StyleButton onClick={onClick}>{text}</StyleButton>
     );
 }
 

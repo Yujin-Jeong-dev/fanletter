@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'ui/Button';
 import { SlEnvolopeLetter } from 'react-icons/sl'
@@ -65,27 +65,36 @@ const Buttons = styled.div`
     gap:1rem;
 `
 
-export default function LetterDetail() {
+export default function LetterDetail({ onDelete }) {
+    const navigation = useNavigate();
     const location = useLocation();
-    const { avatar, content, createdAt, nickname, writedTo } = location.state;
+    const { id, avatar, content, createdAt, nickname, writedTo } = location.state.letter;
+    const deleteLetter = () => {
+        if (window.confirm('정말로 삭제하시겠습니까?')) {
+            onDelete(id);
+            alert('해당 편지가 삭제되었습니다');
+            navigation('/');
+        }
+
+    }
     return (
         <Detail>
             <header>
-
                 <Avatar>
                     <img src={avatar} alt='avatar' />
                     <span>{nickname}</span>
                 </Avatar>
-                <time>{createdAt}</time>
+                <time>{new Date(createdAt).toLocaleString()}</time>
             </header>
 
             <WriteTo><SlEnvolopeLetter /> TO. {writedTo}</WriteTo>
             <Content>{content}</Content>
             <Buttons>
                 <Button text="수정" />
-                <Button text="삭제" />
+                <Button text="삭제" onClick={deleteLetter} />
             </Buttons>
         </Detail>
+
     );
 }
 

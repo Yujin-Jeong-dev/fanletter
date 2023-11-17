@@ -41,7 +41,7 @@ export default function Letter({ letter }) {
     const { avatar, content, createdAt, nickname, id } = letter;
     const navigate = useNavigate();
     return (
-        <Li onClick={() => navigate(`letterDetail/${id}`, { state: letter })}>
+        <Li onClick={() => navigate(`letterDetail/${id}`, { state: { letter } })}>
             <Div>
                 <Img src={avatar} alt='avatar' />
                 <P>{content}</P>
@@ -51,7 +51,7 @@ export default function Letter({ letter }) {
                 <time>{new Date(createdAt).toLocaleString()}</time>
             </Div2>
 
-        </Li>
+        </Li >
     );
 }
 

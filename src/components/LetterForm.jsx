@@ -31,7 +31,7 @@ export default function LetterForm({ filters, onAdd }) {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                <h1>팬레터 작성하기<FaPencil /></h1>
+                <h3>팬레터 작성하기<FaPencil /></h3>
                 <Section>
                     <label htmlFor="nickname">Nickname:</label>
                     <Input type='text' id="nickname" name='nickname' value={form.nickname} onChange={handleChange} maxLength={20} placeholder='최대 20자까지 가능합니다.' />
@@ -63,7 +63,7 @@ const Form = styled.form`
     border-radius: 1.5rem;
     padding:1.5rem;
 
-    h1{
+    h3{
         font-size:1.5rem;
     }
 `;

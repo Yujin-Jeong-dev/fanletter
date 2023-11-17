@@ -1,5 +1,4 @@
 
-import LetterForm from 'components/LetterForm';
 import Members from 'components/Members';
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -18,7 +17,7 @@ const FlexBox = styled.ul`
 
 const filters = ['all', '민지', '하니', '다니엘', '해린', '혜인'];
 
-export default function Home() {
+export default function Home({ letters, onAdd }) {
     const [filter, setFilter] = useState(filters[0]);
 
     return (
@@ -26,7 +25,7 @@ export default function Home() {
             <FlexBox>
                 {filters.map((member, idx) => (<Members key={idx} member={member} filter={filter} onFilterChange={filter => setFilter(filter)} />))}
             </FlexBox>
-            <LetterList filters={filters} filter={filter} />
+            <LetterList letters={letters} filters={filters} filter={filter} onAdd={onAdd} />
         </>
     );
 }
