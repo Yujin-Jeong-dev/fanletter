@@ -5,20 +5,13 @@ import styled from 'styled-components';
 import LetterList from 'components/LetterList';
 
 
-const FlexBox = styled.ul`
-    display:flex;
-    justify-content: center;
-    gap:1rem;
-    margin-top:1.5rem;
-`;
-
-
 
 
 const filters = ['all', '민지', '하니', '다니엘', '해린', '혜인'];
 
 export default function Home({ letters, onAdd }) {
     const [filter, setFilter] = useState(filters[0]);
+
 
     return (
         <>
@@ -30,3 +23,9 @@ export default function Home({ letters, onAdd }) {
     );
 }
 
+const FlexBox = styled.ul`
+    display:flex;
+    justify-content: center;
+    gap:1rem;
+    margin-top:1.5rem;
+`;

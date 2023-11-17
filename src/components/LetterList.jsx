@@ -4,17 +4,6 @@ import Letter from './Letter';
 import LetterForm from './LetterForm';
 
 
-const StyleLetter = styled.ul`
-    width:500px;
-    display:flex;
-    flex-direction: column;
-    margin:auto;
-    padding:1.5rem;
-    gap:1.5rem;
-    border-radius: 1rem;
-    cursor:pointer;
-`;
-
 export default function LetterList({ filters, filter, letters, onAdd }) {
     const filtered = filterLetters(letters, filter);
 
@@ -30,6 +19,17 @@ export default function LetterList({ filters, filter, letters, onAdd }) {
         </>
     );
 }
+
+const StyleLetter = styled.ul`
+    width:500px;
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    padding:1.5rem;
+    gap:1.5rem;
+    border-radius: 1rem;
+    cursor:pointer;
+`;
 
 function filterLetters(letters, filter) {
     if (filter === 'all') return letters;

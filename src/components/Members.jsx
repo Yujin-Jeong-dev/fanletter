@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+export default function Members({ member, filter, onFilterChange }) {
+    return (
+        <StyleLi $filter={filter} onClick={() => onFilterChange(member)}>
+            {member}
+        </StyleLi>
+    );
+}
+
 const StyleLi = styled.li`
     width:80px;
     height:40px;
@@ -16,12 +25,4 @@ const StyleLi = styled.li`
 
     background-color: ${props => props.$filter === props.children ? '#8093f1' : '#83bcff'};
 `;
-
-export default function Members({ member, filter, onFilterChange }) {
-    return (
-        <StyleLi $filter={filter} onClick={() => onFilterChange(member)}>
-            {member}
-        </StyleLi>
-    );
-}
 
