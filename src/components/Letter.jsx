@@ -41,7 +41,7 @@ const Div2 = styled(Div)`
     margin-top:0.5rem;
     p{
         padding:0.5rem;
-        color:rgb(63 63 70);
+        color:#dad7cd;
         font-weight: bold;
     }
 `
