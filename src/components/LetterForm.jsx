@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import userImg from '../asset/user.png'
 import { GiLoveLetter } from 'react-icons/gi';
+import { useLetterContext } from 'context/LettersContext';
 
 
-export default function LetterForm({ filters, onAdd }) {
+export default function LetterForm() {
+    const { filters, onAdd } = useLetterContext();
     const [form, setForm] = useState(initialState);
     const sendTo = filters.filter(filter => filter !== 'All');
 
@@ -14,6 +16,7 @@ export default function LetterForm({ filters, onAdd }) {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value })
     }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (form.nickname.trim() === '' || form.content.trim() === '') {
@@ -25,7 +28,7 @@ export default function LetterForm({ filters, onAdd }) {
             ...form,
             id: uuidv4(),
             avatar: userImg,
-            createdAt: new Date()
+            createdAt: new Date(),
         });
         setForm(initialState);
 
@@ -56,7 +59,7 @@ export default function LetterForm({ filters, onAdd }) {
     );
 }
 
-const initialState = { nickname: '', content: '', writedTo: '' };
+const initialState = { nickname: '', content: '', writedTo: '민지' };
 const Form = styled.form`
     width:500px;
     height: 350px;

@@ -1,26 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useLetterContext, filterLetters } from 'context/LettersContext';
 
 
 
-export default function Letter({ letter }) {
-    const { avatar, content, createdAt, nickname, id, writedTo } = letter;
+export default function Letter() {
+    const { letters, filter } = useLetterContext();
+    const filtered = filterLetters(letters, filter);
+    //필터링된 영화가 있으면 보여줌
     const navigate = useNavigate();
     return (
-        <Li onClick={() => navigate(`letterDetail/${id}`, { state: { letter } })}>
-            <Div>
-                <img src={avatar} alt='avatar' />
-                <Div3>
-                    <h3>To. {writedTo}</h3>
-                    <p>{content}</p>
-                </Div3>
-            </Div>
-            <Div2>
-                <p>{nickname}</p>
-                <time>{new Date(createdAt).toLocaleString()}</time>
-            </Div2>
-        </Li >
+        <>
+            {filtered.map(letter => {
+                const { id, avatar, writedTo, content, nickname, createdAt } = letter;
+                return <Li key={id} onClick={() => navigate(`letterDetail/${id}`, { state: { letter } })}>
+                    <Div>
+                        <img src={avatar} alt='avatar' />
+                        <Div3>
+                            <h3>To. {writedTo}</h3>
+                            <p>{content}</p>
+                        </Div3>
+                    </Div>
+                    <Div2>
+                        <p>{nickname}</p>
+                        <time>{new Date(createdAt).toLocaleString()}</time>
+                    </Div2>
+                </Li >
+            })}
+        </>
     );
 }
 

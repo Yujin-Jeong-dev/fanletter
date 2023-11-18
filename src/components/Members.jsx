@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useLetterContext } from 'context/LettersContext';
 
 
-export default function Members({ member, filter, onFilterChange }) {
+export default function Members() {
+    //원래 Home에서 filters에서 순회하면서 all부터 해인까지 목록을 만드는 거였음. 
+    //그런데 filters.map에서 하나의 요소를 props로 전달받아왔었음. props로 전달받지 않기 위해 여기서 filters를 받고 filters.map순회를 해주자. 
+    const { filters, filter, onFilterChange } = useLetterContext();
     return (
-        <StyleLi $filter={filter} onClick={() => onFilterChange(member)}>
-            {member}
-        </StyleLi>
+        <>
+            {filters.map((member, idx) => (<StyleLi key={idx} $filter={filter} onClick={() => onFilterChange(member)}>{member}</StyleLi>))}
+        </>
     );
 }
 

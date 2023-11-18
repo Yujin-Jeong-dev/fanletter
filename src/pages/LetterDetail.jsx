@@ -3,14 +3,16 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'ui/Button';
 import { SlEnvolopeLetter } from 'react-icons/sl'
+import { useLetterContext } from 'context/LettersContext';
 
 
 
-export default function LetterDetail({ onDelete, onUpdate }) {
+export default function LetterDetail() {
     const navigate = useNavigate();
     const location = useLocation();
     const [editable, setEditable] = useState(false);
     let { id, avatar, content, createdAt, nickname, writedTo } = location.state.letter;
+    const { onDelete, onUpdate } = useLetterContext();
     const [text, setText] = useState('');
     const [updateText, setUpdateText] = useState(content);
 
