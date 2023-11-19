@@ -8,7 +8,6 @@ import { useLetterContext, filterLetters } from 'context/LettersContext';
 export default function Letter() {
     const { letters, filter } = useLetterContext();
     const filtered = filterLetters(letters, filter);
-    //필터링된 영화가 있으면 보여줌
     const navigate = useNavigate();
     return (
         <>
