@@ -1,13 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useLetterContext } from 'context/LettersContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { letterFilters, onFilterChange } from '../redux/modules/filter';
 
 
 export default function Members() {
-    const { filters, filter, onFilterChange } = useLetterContext();
+    const filters = letterFilters;
+    //클릭할 때마다 변경되는 필터값
+    const filter = useSelector((state) => state.filter);
+    const dispatch = useDispatch();
+
+
     return (
         <>
-            {filters.map((member, idx) => (<StyleLi key={idx} $filter={filter} onClick={() => onFilterChange(member)}>{member}</StyleLi>))}
+            {filters.map((member, idx) => (<StyleLi key={idx} $filter={filter} onClick={() => dispatch(onFilterChange(member))}>{member}</StyleLi>))}
         </>
     );
 }

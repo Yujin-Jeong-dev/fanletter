@@ -3,16 +3,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'ui/Button';
 import { SlEnvolopeLetter } from 'react-icons/sl'
-import { useLetterContext } from 'context/LettersContext';
+import { useDispatch } from 'react-redux';
+import { onDeleteLetter, onUpdateLetter } from '../redux/modules/letter';
 
 
 
 export default function LetterDetail() {
     const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useDispatch();
     const [editable, setEditable] = useState(false);
     let { id, avatar, content, createdAt, nickname, writedTo } = location.state.letter;
-    const { onDelete, onUpdate } = useLetterContext();
     const [text, setText] = useState('');
     const [updateText, setUpdateText] = useState(content);
 
@@ -31,14 +32,15 @@ export default function LetterDetail() {
             setEditable(false);
             setUpdateText(text);
             //수정한 text가 담긴 편지 정보 데이터를 전달함
-            onUpdate({ id, avatar, content: text, createdAt, nickname, writedTo });
+            const updateLetter = { id, avatar, content: text, createdAt, nickname, writedTo };
+            dispatch(onUpdateLetter(updateLetter));
             navigate('/');
 
         }
     }
     const deleteLetter = () => {
         if (window.confirm('정말로 삭제하시겠습니까?')) {
-            onDelete(id);
+            dispatch(onDeleteLetter(id));
             alert('해당 편지가 삭제되었습니다');
             navigate('/');
         }

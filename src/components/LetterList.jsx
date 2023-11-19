@@ -2,14 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import Letter from './Letter';
 import LetterForm from './LetterForm';
-import { useLetterContext, filterLetters } from 'context/LettersContext';
+import { useSelector } from 'react-redux';
+
+import { filterLetters } from 'context/LettersContext';
 
 
 export default function LetterList() {
-    const { letters, filter } = useLetterContext();
+    const letters = useSelector((state) => state.letter);
+    const filter = useSelector((state) => state.filter);
     const filtered = filterLetters(letters, filter);
+
+    console.log(filtered);
+
+
     return (
         <>
+
             <LetterForm />
             {letters &&
                 < StyleLetter >
@@ -17,7 +25,7 @@ export default function LetterList() {
                     {/* 필터링된 편지들을 원래 Letter 컴포넌트에게 props로 전달해줬음.  */}
                     {/* 현재는 context로 필터링된 편지를 받아 매핑해줘야하므로 filterLetter함수를 가져온다.  */}
                     {/* {filtered && filtered.map(letter => <Letter key={letter.id} />)} */}
-                    {filtered.length && <Letter />}
+                    {filtered.length > 0 && <Letter />}
                 </StyleLetter >
             }
         </>

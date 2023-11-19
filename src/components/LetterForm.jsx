@@ -4,13 +4,17 @@ import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import userImg from '../asset/user.png'
 import { GiLoveLetter } from 'react-icons/gi';
-import { useLetterContext } from 'context/LettersContext';
+import { useDispatch } from 'react-redux';
+import { onAddLetter } from '../redux/modules/letter';
+import { letterFilters } from '../redux/modules/filter';
+
 
 
 export default function LetterForm() {
-    const { filters, onAdd } = useLetterContext();
+    const filters = letterFilters;
+    const dispatch = useDispatch();
     const [form, setForm] = useState(initialState);
-    const sendTo = filters.filter(filter => filter !== 'All');
+    const sendTo = filters.filter(who => who !== 'All');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,12 +28,13 @@ export default function LetterForm() {
             return;
         }
         //입력한 값을 LetterList에 추가
-        onAdd({
+        const newLetter = {
             ...form,
             id: uuidv4(),
             avatar: userImg,
             createdAt: new Date(),
-        });
+        };
+        dispatch(onAddLetter(newLetter));
         setForm(initialState);
 
     }

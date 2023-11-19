@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useLetterContext, filterLetters } from 'context/LettersContext';
+import { useSelector } from 'react-redux';
+import { filterLetters } from '../redux/modules/letter';
 
 
 
 export default function Letter() {
-    const { letters, filter } = useLetterContext();
+    const letters = useSelector((state) => state.letter);
+    const filter = useSelector((state) => state.filter);
     const filtered = filterLetters(letters, filter);
+    console.log(filtered);
     const navigate = useNavigate();
     return (
         <>
@@ -30,6 +33,7 @@ export default function Letter() {
         </>
     );
 }
+
 
 const Div = styled.div`
     display: flex;
