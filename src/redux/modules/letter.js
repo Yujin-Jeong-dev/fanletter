@@ -7,7 +7,6 @@ const UPDATE_LETTER = 'letter/update';
 export const letterInitialState = fakeLetter;
 
 
-//액션 객체를 리턴하는 함수 생성
 export const onAddLetter = (payload) => {
     return {
         type: ADD_LETTER,

@@ -10,7 +10,6 @@ export default function Letter() {
     const letters = useSelector((state) => state.letter);
     const filter = useSelector((state) => state.filter);
     const filtered = filterLetters(letters, filter);
-    console.log(filtered);
     const navigate = useNavigate();
     return (
         <>

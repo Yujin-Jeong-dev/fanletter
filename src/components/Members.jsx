@@ -5,6 +5,7 @@ import { letterFilters, onFilterChange } from '../redux/modules/filter';
 
 
 export default function Members() {
+    //필터들이 포함된 값
     const filters = letterFilters;
     //클릭할 때마다 변경되는 필터값
     const filter = useSelector((state) => state.filter);

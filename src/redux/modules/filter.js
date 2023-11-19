@@ -1,9 +1,6 @@
-const FILTER_CHANGE = 'filter/change';
-
-
-
 export const letterFilters = ['All', '민지', '하니', '다니엘', '해린', '혜인'];
 export const filterInitialState = letterFilters[0];
+const FILTER_CHANGE = 'filter/change';
 
 export const onFilterChange = (payload) => {
     return {
@@ -11,8 +8,6 @@ export const onFilterChange = (payload) => {
         payload
     };
 }
-
-
 
 
 const filter = (state = filterInitialState, action) => {
