@@ -16,11 +16,11 @@
   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/7acfb910-2d9c-4f01-ad53-c18ffbf739f9)
    - 편지 작성 폼에 닉네임과 멤버에게 보낼 내용과 누구한테 보낼건지 지정한다.
 
-   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/d61f07ef-f308-4f17-9edc-6ac6fe29ffb6)
-   - 등록하기 버튼 또는 엔터를 치면 추가된 팬레터 내용을 확인할수 있다.
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/b63cc669-f950-4e45-9e68-638bd479a07c)
+   - 등록하기 버튼을 누르면 추가된 팬레터 내용을 확인할수 있다.
 
 ##### 3.3 팬레터 삭제하기
-![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/e6847ee4-58bf-4a56-a4ed-f46748a7164e)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/f9ba8225-c5c6-4c35-b03e-34f6ef51efab)
 - 삭제 버튼을 누르면 삭제 확인 알림창을 띄워준다. 만약 확인 버튼을 누르면 해당 편지가 삭제된다.
   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/99f7ae1c-ba75-47d6-89f4-bcfd45fe3ad6)
 - 삭제된 다음 홈으로 이동하고 삭제된 편지가 없는 것을 확인할 수 있다. 
