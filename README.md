@@ -13,7 +13,7 @@
 
    - 편지 작성 폼에 닉네임 또는 내용 중에 하나라도 공백이면 모두 입력하라는 알림창을 띄운다. 
     
-   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/30f04b23-6d9f-4b05-af2e-da3e542de33a)
+  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/7acfb910-2d9c-4f01-ad53-c18ffbf739f9)
    - 편지 작성 폼에 닉네임과 멤버에게 보낼 내용과 누구한테 보낼건지 지정한다.
 
    ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/d61f07ef-f308-4f17-9edc-6ac6fe29ffb6)
