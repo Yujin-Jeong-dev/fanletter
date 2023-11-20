@@ -9,7 +9,7 @@
   
 
 ##### 3.2 팬레터 작성 및 추가하기
-   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/331507b2-4bea-41bf-aa06-8e99ccf1d2bf)
+  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/f8cf525c-940d-4cf8-b49e-5dd17c9009c8)
 
    - 편지 작성 폼에 닉네임 또는 내용 중에 하나라도 공백이면 모두 입력하라는 알림창을 띄운다. 
     
