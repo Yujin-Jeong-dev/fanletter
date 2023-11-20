@@ -4,10 +4,7 @@ const DELETE_LETTER = 'letter/delete';
 const UPDATE_LETTER = 'letter/update';
 
 
-// export const letterInitialState = getLetters();
 export let letters = getLetters();
-
-
 export const onAddLetter = (payload) => {
     return {
         type: ADD_LETTER,
@@ -39,7 +36,7 @@ export const filterLetters = (letters, filter) => {
 const letter = (state = letters, action) => {
     switch (action.type) {
         case ADD_LETTER:
-            letters.push(action.payload);
+            letters = [...state, action.payload];
             saveLetters();
             return letters;
         case DELETE_LETTER:
