@@ -53,7 +53,7 @@
   
 ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/5847db85-1d2a-4a04-a978-d7114a157ac3)
 
-    - 만약 해당 멤버가 받은 편지가 없다면 받은 편지가 없다는 문구를 보여준다. 
+  - 만약 해당 멤버가 받은 편지가 없다면 받은 편지가 없다는 문구를 보여준다. 
 
   
 
