@@ -29,7 +29,10 @@
 ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/9428bd3b-9b69-4725-87f2-72c771ea5da4)
 - 팬레터 수정한 내용이 없거나 내용을 공백으로 비워두면 수정할 수 없다는 알림창을 사용자에게 보여준다.
 
-  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/ded076b0-e93d-49d5-b547-297900eaff18)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/27efcb2b-8ab3-4b55-99ac-7c97705acd13)
+- 수정되기 전 편지 내용이다.
+  
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/a7847fcd-9ca0-46ed-9d35-af50e1fedc96)
 - 수정 버튼을 누르면 수정 확인 알림창을 띄워준다. 만약 확인 버튼을 누르면 편지 내용이 업데이트된다.
 
   ##### 3.5 필터링 기능
