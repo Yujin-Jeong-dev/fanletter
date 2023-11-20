@@ -39,15 +39,16 @@
   필터링 기능은 모든 편지, 특정 멤버가 받은 편지를 필터링할 수 있다. 
 
   ##### 3.5.1 특정 멤버 필터 시, 색상 변화
-  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/bfb7c8c8-b29e-4316-8e09-57ef50a25d7d)
+
+  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/4ca0e966-eb19-48c7-9501-5090e2e176e6)
 
   - 기본값은 All로 설정되어 있다.
     
-    ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/3287b0de-cd3b-4d1d-98f4-29aca62f568f)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/f7261aeb-acac-4dec-9485-1bf8cda2c621)
   - 특정 멤버를 클릭하면 클릭한 멤버가 필터링이 되며 색상이 변한다.
  
   ##### 3.5.2 클릭한 필터로 편지 리스트 보여주기
-  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/952583af-c654-4c6d-80be-93091b53f593)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/8c934a06-7e50-4821-af61-b5c446242a14)
    - '하니'만 클릭했을 때 하니 멤버가 받은 편지만 확인할 수 있다.
   
   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/a0050842-7563-4eec-93d0-8807a14be921)
