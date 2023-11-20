@@ -51,7 +51,7 @@
 ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/8c934a06-7e50-4821-af61-b5c446242a14)
    - '하니'만 클릭했을 때 하니 멤버가 받은 편지만 확인할 수 있다.
   
-  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/a0050842-7563-4eec-93d0-8807a14be921)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/5847db85-1d2a-4a04-a978-d7114a157ac3)
     - 만약 해당 멤버가 받은 편지가 없다면 받은 편지가 없다는 문구를 보여준다. 
 
   
