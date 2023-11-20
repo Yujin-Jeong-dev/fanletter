@@ -4,7 +4,7 @@
 
 ##### 3.1 팬레터 디테일 페이지 이동
 
-![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/fc86895c-286d-45c5-9bc0-9829cf3b72e4)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/5f5ff34e-8a63-468e-8f94-fa4fcefcaafe)
 - 특정 편지를 클릭하면 클릭한 편지 디테일 페이지로 이동한다.
   
 
