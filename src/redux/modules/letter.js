@@ -4,7 +4,8 @@ const DELETE_LETTER = 'letter/delete';
 const UPDATE_LETTER = 'letter/update';
 
 
-export const letterInitialState = fakeLetter;
+// export const letterInitialState = getLetters();
+export let letters = getLetters();
 
 
 export const onAddLetter = (payload) => {
@@ -35,20 +36,32 @@ export const filterLetters = (letters, filter) => {
 
 
 
-const letter = (state = letterInitialState, action) => {
+const letter = (state = letters, action) => {
     switch (action.type) {
         case ADD_LETTER:
-            return [
-                ...state,
-                action.payload
-            ];
+            letters.push(action.payload);
+            saveLetters();
+            return letters;
         case DELETE_LETTER:
-            return state.filter(letter => letter.id !== action.payload);
+            letters = state.filter(letter => letter.id !== action.payload);
+            saveLetters();
+            return letters;
         case UPDATE_LETTER:
-            return state.map(letter => letter.id === action.payload.id ? action.payload : letter);
+            letters = state.map(letter => letter.id === action.payload.id ? action.payload : letter);
+            saveLetters();
+            return letters;
         default:
             return state;
     }
 };
+
+function getLetters() {
+    const letters = localStorage.getItem('letters');
+    return letters ? JSON.parse(letters) : fakeLetter
+}
+
+function saveLetters() {
+    localStorage.setItem('letters', JSON.stringify(letters))
+}
 
 export default letter;

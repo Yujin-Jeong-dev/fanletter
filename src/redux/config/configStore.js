@@ -9,6 +9,6 @@ const rootReducer = combineReducers({
     filter
 });
 
-const store = createStore(rootReducer);
+export const store = createStore(rootReducer);
 
-export default store;
+
