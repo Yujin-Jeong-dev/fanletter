@@ -22,12 +22,11 @@
 ##### 3.3 팬레터 삭제하기
 ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/f9ba8225-c5c6-4c35-b03e-34f6ef51efab)
 - 삭제 버튼을 누르면 삭제 확인 알림창을 띄워준다. 만약 확인 버튼을 누르면 해당 편지가 삭제된다.
-  ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/99f7ae1c-ba75-47d6-89f4-bcfd45fe3ad6)
 - 삭제된 다음 홈으로 이동하고 삭제된 편지가 없는 것을 확인할 수 있다. 
 
 ##### 3.4. 팬레터 수정하기
 
-![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/c469404d-1257-40d4-8a68-8373ad8fe3d4)
+![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/9428bd3b-9b69-4725-87f2-72c771ea5da4)
 - 팬레터 수정한 내용이 없거나 내용을 공백으로 비워두면 수정할 수 없다는 알림창을 사용자에게 보여준다.
 
   ![image](https://github.com/Yujin-Jeong-dev/fanletter/assets/98171044/ded076b0-e93d-49d5-b547-297900eaff18)
